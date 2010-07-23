@@ -1,0 +1,9 @@
+Timber
+======
+
+A memory-efficient Rails log parser with misc tools built on top.
+
+Does not require Hodel 3000 blah blah.
+
+
+Copyright (c) 2010 Lance Ivy, released under the MIT license
