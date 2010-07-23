@@ -9,6 +9,6 @@ module Timber
     end
   end
   
-  Request.include Plugins::Oink
+  Request.class_eval {include Plugins::Oink}
   Request::PATTERNS[/Memory usage: (\d+) \| PID: (\d+)/] = [:memory, :pid]
 end

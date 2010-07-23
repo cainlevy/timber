@@ -1,9 +1,17 @@
-Timber
-======
+= Timber
 
-A memory-efficient Rails log parser with misc tools built on top.
+A memory-efficient Rails log parser that does not require Hodel 3000 formatting. Just feed it the production logs you've already got.
 
-Does not require Hodel 3000 blah blah.
+Intended to work as a foundation for special logging tools like Oink (http://github.com/noahd1/oink), which add custom lines and then need to parse the extra variables back out for analysis.
 
+= Examples
+
+== Combining
+
+Suppose that you're running a cluster of machines that don't share a file system (e.g. EY Cloud). Each has its own log file. That'd be much easier to grep if it were combined into one, yeah? First, grab the logs and unpack them into your working directory. Then:
+
+  rake timber:combine LOGS=production*.log-20100718
+
+Then wait a moment. Shouldn't take long (my laptop will combine ~375 mbs from four logs in about 2 minutes).
 
 Copyright (c) 2010 Lance Ivy, released under the MIT license
