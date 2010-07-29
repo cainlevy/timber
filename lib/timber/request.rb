@@ -6,7 +6,8 @@ module Timber
     attr_reader :controller, :method, :time
     
     PATTERNS = {
-      /Processing ([^#]+)Controller#([^ ]+).* at (\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d)\)/ => [:controller, :method, :time]
+      /Processing ([^#]+)Controller#([^ ]+).* at (\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d)\)/ => [:controller, :method, :time],
+      /Completed in (\d+)ms .* \[(.*)+\]/ => [:benchmark, :url]
     }
 
     def initialize
