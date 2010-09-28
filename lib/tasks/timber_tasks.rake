@@ -13,7 +13,7 @@ namespace :timber do
       exit
     end
     
-    require File.dirname(__FILE__) + '/../lib/timber'
+    require File.dirname(__FILE__) + '/../timber'
     Timber.combine(logs.sort)
   end
 end
