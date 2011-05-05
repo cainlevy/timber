@@ -1,0 +1,75 @@
+# starting server....
+
+Processing FoosController#redirect (for 70.154.113.83 at 2011-05-05 09:42:48) [GET]
+  Parameters: {"action"=>"redirect", "controller"=>"foos"}
+Redirected to http://www.example.com/other/place
+Completed in 142ms (DB: 134) | 302 Found [http://www.example.com/foos/redirect]
+Memory usage: 283212 | PID: 8000
+B4R: [GET /foos/redirect] request: 0.1567 | dispatch: 0.1448 | process: 0.1439 | action: 0.1430 | filters: 0.0019 | routing: 0.0006
+
+
+Processing BarsController#cached to html (for 84.252.201.138 at 2011-05-05 09:42:49) [GET]
+  Parameters: {"format"=>"html", "action"=>"edit", "controller"=>"bars", "id"=>"1"}
+Filter chain halted as [#<ActionController::Filters::AroundFilter:0xcaa5238 @kind=:filter, @options={:unless=>nil, :if=>nil, :only=>#<Set: {"cached"}>}, @method=#<Proc:0x08743864@/data/app/gems/ruby/1.8/gems/actionpack-2.3.11/lib/action_controller/caching/actions.rb:64>, @identifier=nil>] did_not_yield.
+Completed in 37ms (View: 0, DB: 15) | 200 OK [http://www.example.com/bars/1/cached.html]
+Memory usage: 219416 | PID: 19119
+B4R: [GET /bars/1/cached.html] request: 0.0663 | rendering: 0.0005 | dispatch: 0.0408 | process: 0.0389 | action: 0.0381 | filters: 0.0025 | routing: 0.0016
+
+Processing ApplicationController#index (for 65.52.110.73 at 2011-05-05 09:42:50) [GET]
+
+ActionController::RoutingError (No route matches "/foos/99999" with {:method=>:get}):
+  actionpack (2.3.11) lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  actionpack (2.3.11) lib/action_controller/routing/route_set.rb:442:in `recognize'
+  actionpack (2.3.11) lib/action_controller/routing/route_set.rb:437:in `call'
+  actionpack (2.3.11) lib/action_controller/dispatcher.rb:87:in `dispatch'
+  actionpack (2.3.11) lib/action_controller/dispatcher.rb:121:in `_call'
+  actionpack (2.3.11) lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  activerecord (2.3.11) lib/active_record/query_cache.rb:29:in `call'
+  activerecord (2.3.11) lib/active_record/query_cache.rb:29:in `call'
+  activerecord (2.3.11) lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  activerecord (2.3.11) lib/active_record/query_cache.rb:9:in `cache'
+  activerecord (2.3.11) lib/active_record/query_cache.rb:28:in `call'
+  activerecord (2.3.11) lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  haml (3.0.25) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  actionpack (2.3.11) lib/action_controller/string_coercion.rb:25:in `call'
+  rack (1.1.2) lib/rack/head.rb:9:in `call'
+  rack (1.1.2) lib/rack/methodoverride.rb:24:in `call'
+  actionpack (2.3.11) lib/action_controller/params_parser.rb:15:in `call'
+  actionpack (2.3.11) lib/action_controller/session/cookie_store.rb:99:in `call'
+  activesupport (2.3.11) lib/active_support/cache/strategy/local_cache.rb:25:in `call'
+  actionpack (2.3.11) lib/action_controller/failsafe.rb:26:in `call'
+  rack (1.1.2) lib/rack/lock.rb:11:in `call'
+  rack (1.1.2) lib/rack/lock.rb:11:in `synchronize'
+  rack (1.1.2) lib/rack/lock.rb:11:in `call'
+  actionpack (2.3.11) lib/action_controller/dispatcher.rb:106:in `call'
+  rails (2.3.11) lib/rails/rack/static.rb:31:in `call'
+  rack (1.1.2) lib/rack/urlmap.rb:47:in `call'
+  rack (1.1.2) lib/rack/urlmap.rb:41:in `each'
+  rack (1.1.2) lib/rack/urlmap.rb:41:in `call'
+  unicorn (3.5.0) lib/unicorn/http_server.rb:531:in `process_client'
+  unicorn (3.5.0) lib/unicorn/http_server.rb:606:in `worker_loop'
+  unicorn (3.5.0) lib/unicorn/http_server.rb:604:in `each'
+  unicorn (3.5.0) lib/unicorn/http_server.rb:604:in `worker_loop'
+  unicorn (3.5.0) lib/unicorn/http_server.rb:495:in `spawn_missing_workers'
+  unicorn (3.5.0) lib/unicorn/http_server.rb:492:in `fork'
+  unicorn (3.5.0) lib/unicorn/http_server.rb:492:in `spawn_missing_workers'
+  unicorn (3.5.0) lib/unicorn/http_server.rb:488:in `each'
+  unicorn (3.5.0) lib/unicorn/http_server.rb:488:in `spawn_missing_workers'
+  unicorn (3.5.0) lib/unicorn/http_server.rb:502:in `maintain_worker_count'
+  unicorn (3.5.0) lib/unicorn/http_server.rb:297:in `join'
+  unicorn (3.5.0) lib/unicorn.rb:13:in `run'
+  unicorn (3.5.0) bin/unicorn_rails:208
+  /data/app/current/ey_bundler_binstubs/unicorn_rails:16:in `load'
+  /data/app/current/ey_bundler_binstubs/unicorn_rails:16
+
+Rendering /data/app/releases/20110504215126/public/404.html (404 Not Found)
+Memory usage: 284480 | PID: 31644
+B4R: [GET /foos/99999] request: 0.0847 | rendering: 0.0009 | dispatch: 0.0484 | process: 0.0288
+
+Processing BazsController#show (for 174.53.189.148 at 2011-05-05 09:42:51) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"bazs"}
+Rendering template within layouts/project
+Rendering projects/show
+Completed in 870ms (View: 528, DB: 290) | 200 OK [http://www.example.com/bazs/2]
+Memory usage: 237132 | PID: 20276
+B4R: [GET /bazs/2] request: 0.8853 | rendering: 0.6966 | dispatch: 0.8730 | process: 0.8717 | action: 0.8708 | filters: 0.1710 | routing: 0.0011 | activity-menu: 0.0827
