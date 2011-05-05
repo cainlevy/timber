@@ -4,6 +4,7 @@ module Timber
   class Request
     attr_reader :lines
     attr_reader :controller, :method, :time
+    attr_reader :benchmark, :url
     
     PATTERNS = {
       /Processing ([^#]+)Controller#([^ ]+).* at (\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d)\)/ => [:controller, :method, :time],
@@ -32,6 +33,10 @@ module Timber
     
     def time
       @_time ||= Time.parse(@time)
+    end
+
+    def benchmark
+      @_benchmark ||= @benchmark ? @benchmark.to_i : nil
     end
   end
 end
