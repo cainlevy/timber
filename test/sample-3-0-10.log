@@ -1,0 +1,111 @@
+# starting server ...
+More stuff that logs on startup
+
+Started GET "/foos/1" for 127.0.0.1 at Tue Oct 25 17:03:41 -0400 2011
+  Processing by FoosController#show as 
+  Parameters: {"id" => '1'}
+Rendered foos/show.html.erb (11.2ms)
+Completed 200 OK in 72ms (Views: 18.4ms | ActiveRecord: 0.7ms | Sphinx: 0.0ms)
+Memory usage: 258416 | PID: 5290
+
+Started GET "/" for 127.0.0.1 at Tue Oct 25 17:03:55 -0400 2011
+  Processing by SiteController#index as 
+Completed 500 Internal Server Error in 5296ms
+
+RuntimeError (test):
+  app/controllers/site_controller.rb:7:in `index'
+  actionpack (3.0.10) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.0.10) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.0.10) lib/abstract_controller/base.rb:150:in `process_action'
+  actionpack (3.0.10) lib/action_controller/metal/rendering.rb:11:in `process_action'
+  actionpack (3.0.10) lib/abstract_controller/callbacks.rb:18:in `process_action'
+  activesupport (3.0.10) lib/active_support/callbacks.rb:487:in `_run__603849383__process_action__199225275__callbacks'
+  activesupport (3.0.10) lib/active_support/callbacks.rb:221:in `_conditional_callback_around_162'
+  activesupport (3.0.10) lib/active_support/callbacks.rb:331:in `around'
+  activesupport (3.0.10) lib/active_support/callbacks.rb:315:in `send'
+  activesupport (3.0.10) lib/active_support/callbacks.rb:315:in `_callback_around_13'
+  activesupport (3.0.10) lib/active_support/callbacks.rb:220:in `_conditional_callback_around_162'
+  activesupport (3.0.10) lib/active_support/callbacks.rb:441:in `_run__603849383__process_action__199225275__callbacks'
+  activesupport (3.0.10) lib/active_support/callbacks.rb:410:in `send'
+  activesupport (3.0.10) lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+  activesupport (3.0.10) lib/active_support/callbacks.rb:94:in `send'
+  activesupport (3.0.10) lib/active_support/callbacks.rb:94:in `run_callbacks'
+  actionpack (3.0.10) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.0.10) lib/action_controller/metal/rescue.rb:17:in `process_action'
+  actionpack (3.0.10) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  activesupport (3.0.10) lib/active_support/notifications.rb:52:in `instrument'
+  activesupport (3.0.10) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (3.0.10) lib/active_support/notifications.rb:52:in `instrument'
+  actionpack (3.0.10) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.0.10) lib/abstract_controller/base.rb:119:in `process'
+  actionpack (3.0.10) lib/abstract_controller/rendering.rb:41:in `process'
+  actionpack (3.0.10) lib/action_controller/metal.rb:138:in `dispatch'
+  actionpack (3.0.10) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.0.10) lib/action_controller/metal.rb:178:in `action'
+  actionpack (3.0.10) lib/action_dispatch/routing/route_set.rb:62:in `call'
+  actionpack (3.0.10) lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+  actionpack (3.0.10) lib/action_dispatch/routing/route_set.rb:27:in `call'
+  rack-mount (0.6.14) lib/rack/mount/route_set.rb:148:in `call'
+  rack-mount (0.6.14) lib/rack/mount/code_generation.rb:93:in `recognize'
+  rack-mount (0.6.14) lib/rack/mount/code_generation.rb:68:in `optimized_each'
+  rack-mount (0.6.14) lib/rack/mount/code_generation.rb:92:in `recognize'
+  rack-mount (0.6.14) lib/rack/mount/route_set.rb:139:in `call'
+  actionpack (3.0.10) lib/action_dispatch/routing/route_set.rb:493:in `call'
+  actionpack (3.0.10) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  actionpack (3.0.10) lib/action_dispatch/middleware/head.rb:14:in `call'
+  rack (1.2.4) lib/rack/methodoverride.rb:24:in `call'
+  actionpack (3.0.10) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.0.10) lib/action_dispatch/middleware/flash.rb:182:in `call'
+  actionpack (3.0.10) lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+  actionpack (3.0.10) lib/action_dispatch/middleware/cookies.rb:302:in `call'
+  activerecord (3.0.10) lib/active_record/query_cache.rb:32:in `call'
+  activerecord (3.0.10) lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+  activerecord (3.0.10) lib/active_record/query_cache.rb:12:in `cache'
+  activerecord (3.0.10) lib/active_record/query_cache.rb:31:in `call'
+  activerecord (3.0.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+  actionpack (3.0.10) lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+  activesupport (3.0.10) lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+  actionpack (3.0.10) lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+  rack (1.2.4) lib/rack/sendfile.rb:106:in `call'
+  actionpack (3.0.10) lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+  actionpack (3.0.10) lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+  railties (3.0.10) lib/rails/rack/logger.rb:13:in `call'
+  rack (1.2.4) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.0.10) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.2.4) lib/rack/lock.rb:11:in `call'
+  rack (1.2.4) lib/rack/lock.rb:11:in `synchronize'
+  rack (1.2.4) lib/rack/lock.rb:11:in `call'
+  actionpack (3.0.10) lib/action_dispatch/middleware/static.rb:30:in `call'
+  railties (3.0.10) lib/rails/application.rb:168:in `call'
+  railties (3.0.10) lib/rails/application.rb:77:in `send'
+  railties (3.0.10) lib/rails/application.rb:77:in `method_missing'
+  railties (3.0.10) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.2.4) lib/rack/content_length.rb:13:in `call'
+  rack (1.2.4) lib/rack/chunked.rb:15:in `call'
+  rack (1.2.4) lib/rack/handler/mongrel.rb:67:in `process'
+  mongrel (1.1.5) lib/mongrel.rb:159:in `process_client'
+  mongrel (1.1.5) lib/mongrel.rb:158:in `each'
+  mongrel (1.1.5) lib/mongrel.rb:158:in `process_client'
+  mongrel (1.1.5) lib/mongrel.rb:285:in `run'
+  mongrel (1.1.5) lib/mongrel.rb:285:in `initialize'
+  mongrel (1.1.5) lib/mongrel.rb:285:in `new'
+  mongrel (1.1.5) lib/mongrel.rb:285:in `run'
+  mongrel (1.1.5) lib/mongrel.rb:268:in `initialize'
+  mongrel (1.1.5) lib/mongrel.rb:268:in `new'
+  mongrel (1.1.5) lib/mongrel.rb:268:in `run'
+  rack (1.2.4) lib/rack/handler/mongrel.rb:38:in `run'
+  rack (1.2.4) lib/rack/server.rb:217:in `start'
+  railties (3.0.10) lib/rails/commands/server.rb:65:in `start'
+  railties (3.0.10) lib/rails/commands.rb:30
+  railties (3.0.10) lib/rails/commands.rb:27:in `tap'
+  railties (3.0.10) lib/rails/commands.rb:27
+  script/rails:6:in `require'
+  script/rails:6
+
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (208.5ms)
+
+Started GET "/bar/baz" for 127.0.0.1 at Tue Oct 25 17:04:01 -0400 2011
+Memory usage: 149204 | PID: 5290

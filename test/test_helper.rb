@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'test/unit'
-gem 'rails', '2.3.11'
+gem 'rails', '3.0.10'
 require 'active_support'
 require 'active_support/test_case'
 

@@ -1,7 +1,8 @@
 module Timber
   class Log
-    cattr_accessor :marker
-    @@marker = /^PROVIDED BY PLUGIN/
+    class << self
+      attr_accessor :marker
+    end
 
     attr_reader :current, :name
 
@@ -11,7 +12,7 @@ module Timber
       @name = File.basename(@file.path).sub(/\..*$/, '')
 
       # discard any comments or junk at the top of the file
-      until @line.to_s.match(marker)
+      until @line.to_s.match(self.class.marker)
         @line = @file.gets
       end
     end
@@ -22,7 +23,7 @@ module Timber
       @current << @line if @line
       # take all lines until the next Processing line, which stays for the next shift
       while @line = @file.gets
-        if @line.match(marker) and not @current.lines.empty?
+        if @line.match(self.class.marker) and not @current.lines.empty?
           return current
         elsif @line != "\n"
           @current << @line
